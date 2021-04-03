@@ -1078,6 +1078,36 @@ unsigned long long strtoull(const char* str, char** endptr, int base)
     return digits.number();
 }
 
+intmax_t strtoimax(const char* str, char** endptr, int base)
+{
+    long long_value = strtol(str, endptr, base);
+
+    int max_int_value = NumericLimits<int>::max();
+    int min_int_value = NumericLimits<int>::min();
+    if(long_value > max_int_value) {
+        errno = -ERANGE;
+        return max_int_value;
+    } else if (long_value < min_int_value) {
+        errno = -ERANGE;
+        return min_int_value;
+    }
+
+    return long_value;
+}
+
+uintmax_t strtoumax(const char* str, char** endptr, int base)
+{
+    unsigned long ulong_value = strtoul(str, endptr, base);
+
+    unsigned int max_uint_value = NumericLimits<unsigned int>::max();
+    if(ulong_value > max_uint_value) {
+        errno = -ERANGE;
+        return max_uint_value;
+    }
+
+    return ulong_value;
+}
+
 // Serenity's PRNG is not cryptographically secure. Do not rely on this for
 // any real crypto! These functions (for now) are for compatibility.
 // TODO: In the future, rand can be made deterministic and this not.

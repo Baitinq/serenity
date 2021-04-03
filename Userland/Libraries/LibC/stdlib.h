@@ -60,6 +60,8 @@ long strtol(const char*, char** endptr, int base);
 long long strtoll(const char*, char** endptr, int base);
 unsigned long long strtoull(const char*, char** endptr, int base);
 unsigned long strtoul(const char*, char** endptr, int base);
+intmax_t strtoimax(const char*, char** endptr, int base);
+uintmax_t strtoumax(const char*, char** endptr, int base);
 void qsort(void* base, size_t nmemb, size_t size, int (*compar)(const void*, const void*));
 void qsort_r(void* base, size_t nmemb, size_t size, int (*compar)(const void*, const void*, void*), void* arg);
 int atexit(void (*function)());
