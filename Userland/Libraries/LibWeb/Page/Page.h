@@ -105,7 +105,7 @@ public:
     virtual Gfx::IntRect screen_rect() const = 0;
     virtual CSS::PreferredColorScheme preferred_color_scheme() const = 0;
     virtual void page_did_change_title(String const&) { }
-    virtual void page_did_start_loading(const AK::URL&) { }
+    virtual void page_did_start_loading(const AK::URL&, bool) { }
     virtual void page_did_create_main_document() { }
     virtual void page_did_finish_loading(const AK::URL&) { }
     virtual void page_did_change_selection() { }

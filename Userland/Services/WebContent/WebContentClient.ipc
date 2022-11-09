@@ -8,7 +8,7 @@
 
 endpoint WebContentClient
 {
-    did_start_loading(URL url) =|
+    did_start_loading(URL url, bool is_redirect) =|
     did_finish_loading(URL url) =|
     did_paint(Gfx::IntRect content_rect, i32 bitmap_id) =|
     did_invalidate_content_rect(Gfx::IntRect content_rect) =|
