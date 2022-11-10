@@ -117,6 +117,9 @@ public:
     Function<Gfx::IntSize(Gfx::IntSize const&)> on_resize_window;
     Function<Gfx::IntRect()> on_maximize_window;
     Function<Gfx::IntRect()> on_minimize_window;
+    Function<void()> on_back_button;
+    Function<void()> on_forward_button;
+
 
 private:
     OutOfProcessWebView();

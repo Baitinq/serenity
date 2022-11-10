@@ -173,6 +173,13 @@ void OutOfProcessWebView::mousedown_event(GUI::MouseEvent& event)
 void OutOfProcessWebView::mouseup_event(GUI::MouseEvent& event)
 {
     client().async_mouse_up(to_content_position(event.position()), event.button(), event.buttons(), event.modifiers());
+
+    if (event.button() == GUI::MouseButton::Backward && on_back_button) {
+        on_back_button();
+    }
+    else if (event.button() == GUI::MouseButton::Forward && on_forward_button) {
+        on_forward_button();
+    }
 }
 
 void OutOfProcessWebView::mousemove_event(GUI::MouseEvent& event)
