@@ -297,10 +297,10 @@ void OutOfProcessWebView::notify_server_did_middle_click_link(Badge<WebContentCl
         on_link_middle_click(url, target, modifiers);
 }
 
-void OutOfProcessWebView::notify_server_did_start_loading(Badge<WebContentClient>, const AK::URL& url. bool is_redirect)
+void OutOfProcessWebView::notify_server_did_start_loading(Badge<WebContentClient>, const AK::URL& url, bool is_redirect)
 {
     if (on_load_start)
-        on_load_start(url);
+        on_load_start(url, is_redirect);
 }
 
 void OutOfProcessWebView::notify_server_did_finish_loading(Badge<WebContentClient>, const AK::URL& url)

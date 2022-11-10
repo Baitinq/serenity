@@ -128,7 +128,7 @@ public:
     {
     }
 
-    virtual void page_did_start_loading(AK::URL const&) override
+    virtual void page_did_start_loading(AK::URL const&, bool) override
     {
     }
 

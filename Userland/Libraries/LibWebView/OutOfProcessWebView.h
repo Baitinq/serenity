@@ -99,7 +99,7 @@ public:
     Function<void(const AK::URL&, String const& target, unsigned modifiers)> on_link_middle_click;
     Function<void(const AK::URL&)> on_link_hover;
     Function<void(String const&)> on_title_change;
-    Function<void(const AK::URL&)> on_load_start;
+    Function<void(const AK::URL&, bool)> on_load_start;
     Function<void(const AK::URL&)> on_load_finish;
     Function<void(Gfx::Bitmap const&)> on_favicon_change;
     Function<void(const AK::URL&)> on_url_drop;
