@@ -37,7 +37,7 @@ static bool unpack_zip_member(Archive::ZipMember zip_member, bool quiet)
     if (!quiet)
         outln(" extracting: {}", zip_member.name);
 
-    // TODO: verify CRC32s match!
+    // TODO: verify CRC32s match! TOODOODODO
     switch (zip_member.compression_method) {
     case Archive::ZipCompressionMethod::Store: {
         if (!new_file->write(zip_member.compressed_data.data(), zip_member.compressed_data.size())) {
