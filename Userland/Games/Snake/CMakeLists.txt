@@ -7,6 +7,7 @@ serenity_component(
 set(SOURCES
     main.cpp
     SnakeGame.cpp
+    SettingsDialog.cpp
 )
 
 serenity_app(Snake ICON app-snake)
